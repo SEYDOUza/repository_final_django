@@ -1,0 +1,60 @@
+{% extends 'templateApp/squellete.html' %} {% load static %} {% block content %}
+
+<body class="inner_page login">
+  <div class="full_container">
+    <div class="container">
+      {% comment %}
+      <div class="center verticle_center full_height">
+        <div class="login_section">
+          <div class="logo_login">
+            <div class="center">
+              <img
+                width="210"
+                src="{% static 'module/images/logo/logo.png' %}"
+                alt="#"
+              />
+            </div>
+            {% endcomment %}
+          </div>
+          <div class="login_form">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <fieldset>
+                <div class="field">
+                  <label class="label_field">Non Utilisateur</label>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="Non Utilisateur"
+                  />
+                </div>
+                <div class="field">
+                  <label class="label_field">Mot de passe</label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Mot de passe"
+                  />
+                </div>
+                <div class="field">
+                  <label class="label_field hidden">hidden label</label>
+                  <label class="form-check-label"
+                    ><input type="checkbox" class="form-check-input" /> Remember
+                    Me</label
+                  >
+                  <a class="forgot" href="">Forgotten Password?</a>
+                </div>
+                <div class="field margin_0">
+                  <label class="label_field hidden">hidden label</label>
+                  <button class="main_bt">Sing In</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock content %}
+</body>

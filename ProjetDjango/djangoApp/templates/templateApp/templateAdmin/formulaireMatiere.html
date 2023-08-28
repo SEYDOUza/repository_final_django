@@ -1,0 +1,31 @@
+{% extends 'templateApp/squellete.html' %} {% load static %} {% block content %}
+<body class="inner_page login">
+  <div class="full_container">
+    <div class="container">
+      <div class="center verticle_center full_height">
+        <div class="login_section">
+          <div class="logo_login">
+            <div class="center">
+              <img
+                width="210"
+                src="{% static 'module/images/logo/logo.png' %}"
+                alt="#"
+              />
+            </div>
+          </div>
+          <div class="login_form">
+            <center>
+              <form method="post">
+                {% csrf_token %}
+                <div class="field">{{ form.as_p }}</div>
+                <button class="main_bt">Enregistrer</button>
+              </form>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock content %}
+</body>

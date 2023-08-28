@@ -1,0 +1,49 @@
+{% extends 'templateApp/squellete.html' %} {% load static %} {% block content %}
+
+<body class="inner_page login">
+  <div class="full_container">
+    <div class="container">
+      <div class="center">
+        <div class="login_section">
+          <div class="logo_login">
+            <div class="center">
+              <img
+                width="210"
+                src="{% static 'module/images/logo/logo.png' %}"
+                alt="#"
+              />
+            </div>
+          </div>
+          <div class="login_form">
+            <body>
+              <div class="container mt-5"></div>
+              <h3>Détails du projet : {{ projet.intituleProjet }}</h3>
+              <p><strong>Matière :</strong> {{ projet.matiere }}</p>
+              <p>
+                <strong>Date de création :</strong> {{ projet.date_creation }}
+              </p>
+              <p><strong>Deadline :</strong> {{ projet.deadline }}</p>
+              <p><strong>Description :</strong> {{ projet.description }}</p>
+              <p>
+                <strong>Fichier :</strong>
+                <h4><a href="{% url 'projet-download' projet.pk %}">Télécharger</a></h4>
+              </p>
+
+              <h3>Soumettre le devoir</h3>
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %} {{ devoir_form.as_p }}
+                <button type="submit">Soumettre</button>
+              </form>
+            </body>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  {% endblock content %}
+</body>
